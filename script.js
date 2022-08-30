@@ -14,6 +14,10 @@ comment.prototype={
     this.date=date;
     this.content=content;
     this.score=score;
+    this.m={
+        "plus":false,
+        "minus":false
+    }
     }
 }
 function reply(parent){ 
@@ -24,17 +28,33 @@ const editScore=function(mod,score,i){
         let target=e.target;
         
         if(target.classList.contains("plus")){
-
+            if(commentsArray[i].m["plus"]===false){
             let v=parseInt(score.textContent);
             commentsArray[i].score++
             v++;
             score.textContent=v.toString();
+            if(commentsArray[i].m["minus"]===true){
+                commentsArray[i].m["minus"]=false;
+            }else{
+            commentsArray[i].m["plus"]=true;
+            }
+            }
         }else if(target.classList.contains("minus")){
+            if(commentsArray[i].m["minus"]===false){
             let v=parseInt(score.textContent);
             if(v>0){
             commentsArray[i].score--
             v--;
-            score.textContent=v.toString();}
+            score.textContent=v.toString();
+            if(commentsArray[i].m["plus"]===true){
+                commentsArray[i].m["plus"]=false;
+            }else{
+            commentsArray[i].m["minus"]=true;
+            }
+            
+        }
+            
+        }
         }
     })
 }
@@ -42,10 +62,11 @@ const manageDelete=function(div,i){
     
     div.addEventListener("click",function(e){
         console.log(commentsArray[i])
-        delete(commentsArray[i])
+        
         console.log(commentsArray[i])
         if(e.target.classList.contains("delete-text")||e.target.classList.contains("delete-icon")){
             div.remove();
+            delete(commentsArray[i])
         }
     })
 }
@@ -243,7 +264,6 @@ send.addEventListener("click",function(e){
         commentSection.appendChild(div)
         newComment.value="";
     }
-
 })
 
 
