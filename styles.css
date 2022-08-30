@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --special-purple:#5357B6;
+}
+body{
+    background-color:rgb(211, 225, 238);
+}
+.comment{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+.tag{
+    color: var(--special-purple);
+}
+.comment-content{
+    display: inline;
+    width: 100%;
+}
+.comment-content p{
+    margin-right: 10%;
+}
+.username{
+    margin: 0 10px;
+    font-weight: bold;
+}
+.date{
+    color: gray;
+}
+.user-avi{
+    height: 35px;
+    vertical-align: middle;
+}
+.reply-icon{
+    vertical-align:baseline;
+    height: 12px;
+    margin-right: 7px;
+}
+.reply-icon,.reply-text,.delete-text,.delete-icon{
+    
+    color: var(--special-purple);
+    float: right;
+    cursor: pointer;
+}
+.reply-icon{
+    margin-top: 2px;
+}
+.delete-text{
+    margin-right: 25px;
+}
+
+.comment-score{
+   
+    border-radius: 12px;
+    background-color: aliceblue;
+    width: 50px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 5%;
+}
+.reply{
+    margin-left: calc(25% + 5%);
+    margin-right: calc(25% - 5%);
+    margin-top: 15px;
+    width: calc(50% - 5%);
+}
+form{
+    display: inline ;
+}
+#add-comment{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    
+    padding: 10px 0px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+.add-reply{
+    margin-left: calc(25% + 5%);
+    margin-right: calc(25% - 5%);
+    margin-top: 15px;
+    width: calc(50% - 5%);
+    padding: 10px 0px;
+    background-color: white;
+    border-radius: 12px;
+}
+#add-comment img,.add-reply img{
+vertical-align:top;
+margin-left: 20px;
+}
+#new-comment,.new-reply{
+    width: 65%;
+    height: 80px;
+    margin:0 20px;
+    border-radius: 12px;
+    border:  1px solid gray;
+    text-align: start;
+    resize: none;
+}
+.score-mod{
+    cursor: pointer;
+}
+#send,.send-reply{
+    height: 50px;
+    vertical-align: top ;
+    margin-top: 10px;
+    background-color: var(--special-purple);
+    border: solid 1px var(--special-purple);
+    border-radius: 12px;
+    color: white;
+    width: 80px;
+}
+#comments{
+    display: flex;
+    flex-direction: column;
+}
